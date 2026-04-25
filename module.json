@@ -2,7 +2,7 @@
   "id": "oknajan-cards",
   "title": "Oknajan Cards",
   "description": "Card-based spell and technique progression for D&D 5e on Foundry VTT, with a character-level stamina system.",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "authors": [{ "name": "Oknaj" }],
   "compatibility": {
     "minimum": "13.347",
@@ -49,5 +49,5 @@
   "socket": false,
   "url": "",
   "manifest": "https://raw.githubusercontent.com/HakuJaku/oknajan-cards/refs/heads/main/module.json",
-  "download": "https://github.com/HakuJaku/oknajan-cards/archive/refs/tags/v1.0.0.zip"
+  "download": "https://github.com/HakuJaku/oknajan-cards/archive/refs/tags/v3.0.0.zip"
 }
