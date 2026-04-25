@@ -28,7 +28,7 @@ Once published, search for **Oknajan Cards** in Foundry's Module Management brow
 Paste the manifest URL into Foundry's **Install Module → Manifest URL** field:
 
 ```
-https://raw.githubusercontent.com/<org>/oknajan-cards/main/module.json
+https://github.com/HakuJaku/oknajan-cards-V2/blob/main/module.json
 ```
 
 ### Manual
