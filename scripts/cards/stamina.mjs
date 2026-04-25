@@ -20,6 +20,22 @@ export function canAfford(actor, item) {
   return cost === 0 || value >= cost;
 }
 
+export async function recalculateStaminaMax(actor) {
+  const existing = readStamina(actor);
+  if (!existing.configured) return;
+
+  const formula = game.settings.get(MODULE_ID, SETTINGS.staminaMaxFormula);
+  const roll = new Roll(formula, actor.getRollData());
+  roll.evaluateSync();
+  const newMax = Math.max(0, Math.round(roll.total));
+  if (newMax === existing.max) return;
+
+  const updates = { "system.resources.tertiary.max": newMax };
+  if (existing.value > newMax) updates["system.resources.tertiary.value"] = newMax;
+  await actor.update(updates);
+  log.info(`recalculated stamina max for ${actor.name}: ${existing.max} → ${newMax}`);
+}
+
 export async function initialiseStaminaPool(actor) {
   const existing = readStamina(actor);
   if (existing.configured) {

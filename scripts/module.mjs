@@ -6,6 +6,7 @@ import { injectSpellSheet } from "./sheets/spell-sheet-injector.mjs";
 import { injectFeatSheet } from "./sheets/feat-sheet-injector.mjs";
 import { preCreateItemDefaults } from "./flags/preCreateDefaults.mjs";
 import { CARD_TEMPLATE_PATHS, injectCardsTab } from "./cards/cards-tab.mjs";
+import { injectStaminaBar } from "./sheets/stamina-bar-injector.mjs";
 import { queueActorSheetRender } from "./util/render-queue.mjs";
 import { registerActivityTracker } from "./hooks/activity-tracker.mjs";
 import { registerProgression } from "./hooks/progression.mjs";
@@ -15,6 +16,7 @@ import { registerRefundWrapper } from "./hooks/refund-wrapper.mjs";
 
 const MODULE_TEMPLATE_PATHS = Object.freeze([
   ...CARD_TEMPLATE_PATHS,
+  `modules/${MODULE_ID}/templates/sheets/stamina-bar.hbs`,
   `modules/${MODULE_ID}/templates/dialogs/empowerment.hbs`,
   `modules/${MODULE_ID}/templates/dialogs/initialise-stamina.hbs`,
   `modules/${MODULE_ID}/templates/dialogs/modify-spell.hbs`,
@@ -68,11 +70,18 @@ function verifyPreRollDamageHook() {
 
 // Phase 4 — Cards tab injection on the character sheet, and debounced
 // re-render triggers on stamina and owned-item changes.
-Hooks.on(HOOKS.renderCharacterSheet, injectCardsTab);
+Hooks.on(HOOKS.renderCharacterSheet, async (app, element, context, options) => {
+  await injectCardsTab(app, element, context, options);
+  await injectStaminaBar(app, element);
+});
 
-Hooks.on(HOOKS.updateActor, (actor, changes) => {
+Hooks.on(HOOKS.updateActor, async (actor, changes) => {
   if (foundry.utils.hasProperty(changes, "system.resources.tertiary")) {
     queueActorSheetRender(actor);
+  }
+  if (foundry.utils.hasProperty(changes, "system.abilities.con")) {
+    const { recalculateStaminaMax } = await import("./cards/stamina.mjs");
+    await recalculateStaminaMax(actor);
   }
 });
 
