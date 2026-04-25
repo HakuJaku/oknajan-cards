@@ -48,6 +48,6 @@
   ],
   "socket": false,
   "url": "",
-  "manifest": "",
+  "manifest": "https://raw.githubusercontent.com/HakuJaku/oknajan-cards-V2/refs/heads/main/module.json",
   "download": "https://github.com/HakuJaku/oknajan-cards-V2"
 }
