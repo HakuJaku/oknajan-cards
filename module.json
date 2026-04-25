@@ -1,9 +1,9 @@
 {
-  "id": "oknajan-cards",
-  "title": "Oknajan Cards",
+  "id": "oknajan-cards-V2",
+  "title": "Oknajan Cards-V2",
   "description": "Card-based spell and technique progression for D&D 5e on Foundry VTT, with a character-level stamina system.",
-  "version": "1.0.0",
-  "authors": [{ "name": "Oknajan Project" }],
+  "version": "2.0.0",
+  "authors": [{ "name": "Oknaj" }],
   "compatibility": {
     "minimum": "13.347",
     "verified": "14",
