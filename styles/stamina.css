@@ -1,0 +1,76 @@
+.ok-stamina-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--ok-card-bg);
+  border: 1px solid var(--ok-card-border);
+  border-radius: 10px;
+  margin-bottom: 0.25rem;
+}
+
+.ok-stamina-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+}
+
+.ok-stamina-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.ok-stamina-value {
+  font-weight: bold;
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ok-stamina-bar {
+  flex: 1;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--ok-card-border);
+}
+
+.ok-stamina-bar-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--ok-stamina-bar-low) 0%,
+    var(--ok-stamina-bar-mid) 50%,
+    var(--ok-stamina-bar) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: width 180ms ease;
+}
+
+.ok-stamina-init {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px dashed var(--ok-card-border-strong);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.ok-stamina-init:hover {
+  background: var(--ok-card-bg-hover);
+  border-style: solid;
+}
+
+.ok-stamina-init i {
+  color: var(--ok-tier-3);
+}
+
+.ok-stamina-header[data-low="true"] .ok-stamina-value {
+  color: var(--ok-stamina-bar-low);
+}

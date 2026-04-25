@@ -1,0 +1,74 @@
+{
+  "_id": "okStormcaller001",
+  "_key": "!items!okStormcaller001",
+  "name": "Stormcaller",
+  "type": "spell",
+  "img": "icons/magic/lightning/bolt-strike-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>You call down a roaring bolt of lightning on a point you can see within range. Each creature in a 10-foot-radius sphere centred on that point must make a Dexterity saving throw, taking 5d8 lightning damage on a failed save, or half as much on a successful one.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "level": 3,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": false
+    },
+    "materials": { "value": "", "consumed": false, "cost": 0, "supply": 0 },
+    "preparation": { "mode": "prepared", "prepared": true },
+    "activation": { "type": "action", "cost": 1, "condition": "" },
+    "duration": { "value": "", "units": "inst" },
+    "cover": null,
+    "target": { "value": 10, "width": null, "units": "ft", "type": "sphere", "prompt": true },
+    "range": { "value": 120, "long": null, "units": "ft" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": true },
+    "activities": {
+      "okStormcallerAct1": {
+        "_id": "okStormcallerAct1",
+        "type": "save",
+        "name": "Dexterity Save",
+        "activation": { "type": "spell", "cost": 1, "override": false },
+        "save": {
+          "ability": ["dex"],
+          "dc": { "calculation": "spellcasting", "formula": "" }
+        },
+        "damage": {
+          "critical": { "bonus": "" },
+          "onSave": "half",
+          "parts": [
+            { "number": 5, "denomination": 8, "bonus": "", "types": ["lightning"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "whole", "number": 1, "formula": "" } }
+          ]
+        },
+        "consumption": { "targets": [], "scaling": { "allowed": true, "max": "" }, "spellSlot": true }
+      }
+    }
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "spell",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 0,
+      "spellConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "essentialComponents": { "vocal": true, "somatic": true, "material": true },
+        "empowermentCap": 3,
+        "empowermentPerSlot": "Adds one extra d8 of lightning damage per empowerment."
+      },
+      "techniqueConfig": null
+    }
+  }
+}

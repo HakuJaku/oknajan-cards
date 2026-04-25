@@ -1,0 +1,63 @@
+.ok-foil {
+  position: relative;
+}
+
+.ok-foil::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 62, 201, 0.18) 0%,
+    rgba(62, 201, 255, 0.18) 35%,
+    rgba(255, 240, 62, 0.18) 65%,
+    rgba(255, 62, 201, 0.18) 100%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  animation: ok-foil-pan 8s linear infinite;
+  background-size: 300% 300%;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+.ok-foil::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.06) 40deg,
+    transparent 80deg,
+    rgba(255, 255, 255, 0.03) 180deg,
+    transparent 220deg,
+    rgba(255, 255, 255, 0.05) 300deg,
+    transparent 360deg
+  );
+  pointer-events: none;
+  animation: ok-foil-sparkle 14s linear infinite;
+  z-index: 0;
+}
+
+.ok-foil > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes ok-foil-pan {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 300% 300%; }
+}
+
+@keyframes ok-foil-sparkle {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ok-foil::before,
+  .ok-foil::after {
+    animation: none;
+  }
+}

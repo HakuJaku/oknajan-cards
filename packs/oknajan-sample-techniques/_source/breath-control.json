@@ -1,0 +1,49 @@
+{
+  "_id": "okBreathControl1",
+  "_key": "!items!okBreathControl1",
+  "name": "Breath Control",
+  "type": "feat",
+  "img": "icons/magic/air/wind-tornado-diffuse.webp",
+  "system": {
+    "description": {
+      "value": "<p>Through practised breath work you steady your body and mind. You gain the ability to hold your breath for up to twice as long as normal, and you have advantage on saving throws against being frightened.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "type": { "value": "class", "subtype": "" },
+    "activation": { "type": "", "cost": null, "condition": "" },
+    "duration": { "value": "", "units": "" },
+    "target": { "value": null, "width": null, "units": "", "type": "self", "prompt": false },
+    "range": { "value": null, "long": null, "units": "self" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": false },
+    "activities": {}
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "technique",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 0,
+      "spellConfig": null,
+      "techniqueConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "tier1Benefit": "You can hold your breath for up to ten minutes.",
+        "tier2Benefit": "You are immune to the frightened condition while conscious.",
+        "ultimateName": "",
+        "ultimateDescription": "",
+        "ultimateImg": null,
+        "ultimateStaminaCost": 0,
+        "category": "Discipline",
+        "resourceLabel": null
+      }
+    }
+  }
+}

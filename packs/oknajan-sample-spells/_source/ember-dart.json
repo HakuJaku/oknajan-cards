@@ -1,0 +1,76 @@
+{
+  "_id": "okEmberDart00001",
+  "_key": "!items!okEmberDart00001",
+  "name": "Ember Dart",
+  "type": "spell",
+  "img": "icons/magic/fire/projectile-fireball-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>You hurl a dart of compressed flame at a creature within range. On a successful ranged spell attack, the target takes 1d6 fire damage.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "level": 0,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": false
+    },
+    "materials": { "value": "", "consumed": false, "cost": 0, "supply": 0 },
+    "preparation": { "mode": "prepared", "prepared": true },
+    "activation": { "type": "action", "cost": 1, "condition": "" },
+    "duration": { "value": "", "units": "inst" },
+    "cover": null,
+    "target": { "value": 1, "width": null, "units": "", "type": "creature", "prompt": true },
+    "range": { "value": 60, "long": null, "units": "ft" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": true },
+    "activities": {
+      "okEmberDartAct01": {
+        "_id": "okEmberDartAct01",
+        "type": "attack",
+        "name": "Ranged Spell Attack",
+        "activation": { "type": "spell", "cost": 1, "override": false },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": { "threshold": null },
+          "flat": false,
+          "type": { "value": "ranged", "classification": "spell" }
+        },
+        "damage": {
+          "critical": { "bonus": "" },
+          "parts": [
+            { "number": 1, "denomination": 6, "bonus": "", "types": ["fire"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "", "number": 1, "formula": "" } }
+          ]
+        },
+        "consumption": { "targets": [], "scaling": { "allowed": false, "max": "" }, "spellSlot": true }
+      }
+    }
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "spell",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 0,
+      "spellConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "essentialComponents": { "vocal": true, "somatic": true, "material": true },
+        "empowermentCap": 3,
+        "empowermentPerSlot": "Adds one extra d6 of fire damage per empowerment."
+      },
+      "techniqueConfig": null
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_id": "okBindingVeil001",
+  "_key": "!items!okBindingVeil001",
+  "name": "Binding Veil",
+  "type": "spell",
+  "img": "icons/magic/control/silhouette-hold-beam-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>You raise a shimmering veil in a 5-foot cube within range. A creature that attempts to move through the veil must succeed on a Strength saving throw or be restrained until the start of its next turn.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "level": 2,
+    "school": "abj",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true
+    },
+    "materials": { "value": "a strip of fine silk", "consumed": false, "cost": 0, "supply": 0 },
+    "preparation": { "mode": "prepared", "prepared": true },
+    "activation": { "type": "action", "cost": 1, "condition": "" },
+    "duration": { "value": "1", "units": "minute" },
+    "cover": null,
+    "target": { "value": 5, "width": null, "units": "ft", "type": "cube", "prompt": true },
+    "range": { "value": 30, "long": null, "units": "ft" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": true },
+    "activities": {
+      "okBindingVeilAct1": {
+        "_id": "okBindingVeilAct1",
+        "type": "save",
+        "name": "Strength Save",
+        "activation": { "type": "spell", "cost": 1, "override": false },
+        "save": {
+          "ability": ["str"],
+          "dc": { "calculation": "spellcasting", "formula": "" }
+        },
+        "damage": { "parts": [] },
+        "consumption": { "targets": [], "scaling": { "allowed": false, "max": "" }, "spellSlot": true }
+      }
+    }
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "spell",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 0,
+      "spellConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "essentialComponents": { "vocal": true, "somatic": true, "material": true },
+        "empowermentCap": 3,
+        "empowermentPerSlot": "Covers one additional 5ft cube per empowerment."
+      },
+      "techniqueConfig": null
+    }
+  }
+}

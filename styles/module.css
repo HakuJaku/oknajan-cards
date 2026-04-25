@@ -1,0 +1,23 @@
+:root {
+  --ok-tier-0: #9aa3ad;
+  --ok-tier-1: #cd7f32;
+  --ok-tier-2: #c0c0c0;
+  --ok-tier-3: #ffd700;
+  --ok-tier-1-glow: rgba(205, 127, 50, 0.35);
+  --ok-tier-2-glow: rgba(192, 192, 192, 0.45);
+  --ok-tier-3-glow: rgba(255, 215, 0, 0.55);
+  --ok-foil-a: #ff3ec9;
+  --ok-foil-b: #3ec9ff;
+  --ok-foil-c: #fff03e;
+  --ok-stamina-bar: #6bc07a;
+  --ok-stamina-bar-mid: #e0c24a;
+  --ok-stamina-bar-low: #d46a4a;
+  --ok-card-bg: rgba(0, 0, 0, 0.03);
+  --ok-card-bg-hover: rgba(0, 0, 0, 0.05);
+  --ok-card-border: rgba(0, 0, 0, 0.14);
+  --ok-card-border-strong: rgba(0, 0, 0, 0.28);
+  --ok-chip-bg: rgba(0, 0, 0, 0.06);
+  --ok-accent: #5e4fb2;
+  --ok-accent-contrast: #ffffff;
+  --ok-disabled-opacity: 0.45;
+}

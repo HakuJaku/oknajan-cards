@@ -1,0 +1,23 @@
+<section class="tab ok-cards-tab" data-tab="oknajan-cards" data-group="primary">
+  {{> "modules/oknajan-cards/templates/cards/stamina-header.hbs" stamina=stamina}}
+
+  <h3 class="ok-section-heading">{{localize "OKNAJAN.cards.spellsHeading"}}</h3>
+  <div class="ok-card-grid">
+    {{#each spells}}
+      {{> "modules/oknajan-cards/templates/cards/spell-card.hbs" card=this}}
+    {{/each}}
+    {{#unless spells.length}}
+      <p class="ok-empty">{{localize "OKNAJAN.cards.noSpells"}}</p>
+    {{/unless}}
+  </div>
+
+  <h3 class="ok-section-heading">{{localize "OKNAJAN.cards.techniquesHeading"}}</h3>
+  <div class="ok-card-grid">
+    {{#each techniques}}
+      {{> "modules/oknajan-cards/templates/cards/technique-card.hbs" card=this}}
+    {{/each}}
+    {{#unless techniques.length}}
+      <p class="ok-empty">{{localize "OKNAJAN.cards.noTechniques"}}</p>
+    {{/unless}}
+  </div>
+</section>

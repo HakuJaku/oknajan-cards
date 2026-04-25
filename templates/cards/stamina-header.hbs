@@ -1,0 +1,16 @@
+<div class="ok-stamina-header">
+  {{#if stamina.configured}}
+    <div class="ok-stamina-text">
+      <span class="ok-stamina-label">{{localize "OKNAJAN.cards.stamina"}}</span>
+      <span class="ok-stamina-value">{{stamina.value}} / {{stamina.max}}</span>
+    </div>
+    <div class="ok-stamina-bar">
+      <div class="ok-stamina-bar-fill" style="width: {{stamina.percent}}%;"></div>
+    </div>
+  {{else}}
+    <button type="button" class="ok-stamina-init">
+      <i class="fa-solid fa-bolt"></i>
+      <span>{{localize "OKNAJAN.cards.initialiseStamina"}}</span>
+    </button>
+  {{/if}}
+</div>

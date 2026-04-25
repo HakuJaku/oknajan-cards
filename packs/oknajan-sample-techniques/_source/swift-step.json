@@ -1,0 +1,63 @@
+{
+  "_id": "okSwiftStep00001",
+  "_key": "!items!okSwiftStep00001",
+  "name": "Swift Step",
+  "type": "feat",
+  "img": "icons/skills/movement/arrow-upward-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>As a bonus action, you dash a short distance with uncanny speed. Until the end of your turn, your walking speed increases by 10 feet and opportunity attacks against you are made with disadvantage.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "type": { "value": "class", "subtype": "" },
+    "activation": { "type": "bonus", "cost": 1, "condition": "" },
+    "duration": { "value": "1", "units": "turn" },
+    "target": { "value": null, "width": null, "units": "", "type": "self", "prompt": false },
+    "range": { "value": null, "long": null, "units": "self" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": false },
+    "activities": {
+      "okSwiftStepAct001": {
+        "_id": "okSwiftStepAct001",
+        "type": "utility",
+        "name": "Swift Step",
+        "activation": { "type": "bonus", "cost": 1, "override": false },
+        "consumption": {
+          "targets": [
+            { "type": "attribute", "target": "resources.tertiary.value", "value": "1" }
+          ],
+          "scaling": { "allowed": false, "max": "" },
+          "spellSlot": false
+        }
+      }
+    }
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "technique",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 1,
+      "spellConfig": null,
+      "techniqueConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "tier1Benefit": "Your walking speed increase becomes 15 feet.",
+        "tier2Benefit": "You can move through hostile creatures' spaces until the end of your turn.",
+        "ultimateName": "Whirling Step",
+        "ultimateDescription": "<p>You surge in a whirl of motion. Until the end of your next turn your walking speed is doubled, opportunity attacks against you automatically miss, and you can pass through any creature's space without provoking.</p>",
+        "ultimateImg": "icons/skills/movement/arrow-upward-blue.webp",
+        "ultimateStaminaCost": 2,
+        "category": "Mobility",
+        "resourceLabel": null
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<section class="tab ok-sheet-tab" data-tab="oknajan" data-group="primary">
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.treatAsCard"}}</legend>
+    <label class="ok-checkbox">
+      <input type="checkbox" name="flags.oknajan-cards.isCard" {{#if flags.isCard}}checked{{/if}}/>
+      <span>{{localize "OKNAJAN.sheet.treatAsCardLabel"}}</span>
+    </label>
+  </fieldset>
+
+  {{#if flags.isCard}}
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.spell.progression"}}</legend>
+    <div class="ok-grid ok-grid-3">
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier1Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.spellConfig.tier1Threshold"
+               value="{{flags.spellConfig.tier1Threshold}}"/>
+      </label>
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier2Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.spellConfig.tier2Threshold"
+               value="{{flags.spellConfig.tier2Threshold}}"/>
+      </label>
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier3Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.spellConfig.tier3Threshold"
+               value="{{flags.spellConfig.tier3Threshold}}"
+               {{#if flags.isModifiedVariant}}disabled{{/if}}/>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.spell.essentialComponents"}}</legend>
+    <div class="ok-grid ok-grid-3">
+      <label>
+        <input type="checkbox" name="flags.oknajan-cards.spellConfig.essentialComponents.vocal"
+               {{#if flags.spellConfig.essentialComponents.vocal}}checked{{/if}}/>
+        {{localize "OKNAJAN.sheet.spell.vocal"}}
+      </label>
+      <label>
+        <input type="checkbox" name="flags.oknajan-cards.spellConfig.essentialComponents.somatic"
+               {{#if flags.spellConfig.essentialComponents.somatic}}checked{{/if}}/>
+        {{localize "OKNAJAN.sheet.spell.somatic"}}
+      </label>
+      <label>
+        <input type="checkbox" name="flags.oknajan-cards.spellConfig.essentialComponents.material"
+               {{#if flags.spellConfig.essentialComponents.material}}checked{{/if}}/>
+        {{localize "OKNAJAN.sheet.spell.material"}}
+      </label>
+    </div>
+    <p class="ok-hint">{{localize "OKNAJAN.sheet.spell.componentsHint"}}</p>
+  </fieldset>
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.spell.empowerment"}}</legend>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.spell.empowermentCap"}}</span>
+      <input type="number" min="0" step="1"
+             name="flags.oknajan-cards.spellConfig.empowermentCap"
+             value="{{flags.spellConfig.empowermentCap}}"/>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.spell.empowermentPerSlot"}}</span>
+      <textarea rows="3"
+                name="flags.oknajan-cards.spellConfig.empowermentPerSlot">{{flags.spellConfig.empowermentPerSlot}}</textarea>
+    </label>
+    <p class="ok-hint">{{localize "OKNAJAN.sheet.spell.empowermentHint"}}</p>
+  </fieldset>
+  {{/if}}
+
+</section>

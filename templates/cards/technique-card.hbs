@@ -1,0 +1,42 @@
+<article class="ok-card ok-card-technique ok-tier-{{card.tier}} {{#if card.foil}}ok-foil{{/if}} {{#if card.isUltimate}}ok-ultimate{{/if}}"
+         data-item-id="{{card.id}}">
+  <div class="ok-card-img-wrap">
+    <img class="ok-card-img" src="{{card.img}}" alt=""/>
+  </div>
+  <header class="ok-card-header">
+    <h4 class="ok-card-name">{{card.name}}</h4>
+    <div class="ok-card-stars">
+      {{#times card.tier}}<span class="ok-star"></span>{{/times}}
+    </div>
+  </header>
+
+  <div class="ok-cost-row">
+    {{#if card.isPassive}}
+      <span class="ok-chip ok-chip-passive">{{localize "OKNAJAN.cards.passive"}}</span>
+    {{else}}
+      <span class="ok-chip ok-chip-cost">
+        <i class="fa-solid fa-bolt"></i> {{card.cost}}
+      </span>
+    {{/if}}
+    {{#if card.category}}<span class="ok-chip ok-chip-category">{{card.category}}</span>{{/if}}
+  </div>
+
+  {{#if (gte card.tier 1)}}
+    <p class="ok-benefit ok-tier-1-text">{{card.tier1Benefit}}</p>
+  {{/if}}
+  {{#if (gte card.tier 2)}}
+    <p class="ok-benefit ok-tier-2-text">{{card.tier2Benefit}}</p>
+  {{/if}}
+
+  {{#unless card.isPassive}}
+  <footer class="ok-card-footer">
+    <button type="button"
+            class="ok-card-use"
+            data-item-id="{{card.id}}"
+            {{#unless card.affordable}}disabled title="{{localize 'OKNAJAN.cards.insufficientStamina'}}"{{/unless}}>
+      <i class="fa-solid fa-play"></i>
+      <span>{{localize "OKNAJAN.cards.use"}}</span>
+    </button>
+  </footer>
+  {{/unless}}
+</article>

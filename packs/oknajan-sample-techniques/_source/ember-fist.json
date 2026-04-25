@@ -1,0 +1,76 @@
+{
+  "_id": "okEmberFist00001",
+  "_key": "!items!okEmberFist00001",
+  "name": "Ember Fist",
+  "type": "feat",
+  "img": "icons/skills/melee/unarmed-punch-fist-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>As an action, your fists wreath in smouldering embers. Make an unarmed strike; on a hit it deals an additional 1d6 fire damage and the target must succeed on a Dexterity save or catch fire, taking 1d4 fire damage at the start of each of its turns until a creature uses an action to smother the flames.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": { "custom": "Oknajan Cards" },
+    "type": { "value": "class", "subtype": "" },
+    "activation": { "type": "action", "cost": 1, "condition": "" },
+    "duration": { "value": "", "units": "inst" },
+    "target": { "value": 1, "width": null, "units": "", "type": "creature", "prompt": true },
+    "range": { "value": 5, "long": null, "units": "ft" },
+    "uses": { "value": null, "max": "", "per": null, "recovery": "", "prompt": false },
+    "activities": {
+      "okEmberFistAct001": {
+        "_id": "okEmberFistAct001",
+        "type": "attack",
+        "name": "Ember Fist",
+        "activation": { "type": "action", "cost": 1, "override": false },
+        "attack": {
+          "ability": "str",
+          "bonus": "",
+          "critical": { "threshold": null },
+          "flat": false,
+          "type": { "value": "melee", "classification": "unarmed" }
+        },
+        "damage": {
+          "critical": { "bonus": "" },
+          "parts": [
+            { "number": 1, "denomination": 6, "bonus": "", "types": ["fire"], "custom": { "enabled": false, "formula": "" }, "scaling": { "mode": "", "number": 1, "formula": "" } }
+          ]
+        },
+        "consumption": {
+          "targets": [
+            { "type": "attribute", "target": "resources.tertiary.value", "value": "2" }
+          ],
+          "scaling": { "allowed": false, "max": "" },
+          "spellSlot": false
+        }
+      }
+    }
+  },
+  "flags": {
+    "oknajan-cards": {
+      "isCard": true,
+      "contentType": "technique",
+      "activationCount": 0,
+      "progressionTier": 0,
+      "parentItemId": null,
+      "isModifiedVariant": false,
+      "isUltimate": false,
+      "foilUnlocked": false,
+      "staminaCost": 2,
+      "spellConfig": null,
+      "techniqueConfig": {
+        "tier1Threshold": 5,
+        "tier2Threshold": 15,
+        "tier3Threshold": 30,
+        "tier1Benefit": "The ongoing fire damage increases to 1d6.",
+        "tier2Benefit": "On a critical hit, the target cannot smother the flames until it takes a short rest.",
+        "ultimateName": "Ember Fist: Blaze",
+        "ultimateDescription": "<p>You strike with a fist of pure flame. On a hit the target takes an additional 4d6 fire damage and is wreathed in persistent fire, taking 2d6 at the start of each of its turns until it or an adjacent creature uses an action to smother the flames.</p>",
+        "ultimateImg": "icons/magic/fire/projectile-fireball-smoke-large-pink.webp",
+        "ultimateStaminaCost": 3,
+        "category": "Strike",
+        "resourceLabel": null
+      }
+    }
+  }
+}

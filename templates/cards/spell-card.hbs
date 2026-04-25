@@ -1,0 +1,39 @@
+<article class="ok-card ok-card-spell ok-tier-{{card.tier}} {{#if card.foil}}ok-foil{{/if}} {{#if card.isModifiedVariant}}ok-modified{{/if}}"
+         data-item-id="{{card.id}}">
+  <div class="ok-card-img-wrap">
+    <img class="ok-card-img" src="{{card.img}}" alt=""/>
+  </div>
+  <header class="ok-card-header">
+    <h4 class="ok-card-name">{{card.name}}</h4>
+    <div class="ok-card-stars">
+      {{#times card.tier}}<span class="ok-star"></span>{{/times}}
+    </div>
+  </header>
+
+  <ul class="ok-components">
+    <li class="{{#unless card.essentialComponents.vocal}}ok-mastered{{/unless}}"
+        title="{{#unless card.essentialComponents.vocal}}{{localize 'OKNAJAN.cards.mastered'}}{{/unless}}">V</li>
+    <li class="{{#unless card.essentialComponents.somatic}}ok-mastered{{/unless}}"
+        title="{{#unless card.essentialComponents.somatic}}{{localize 'OKNAJAN.cards.mastered'}}{{/unless}}">S</li>
+    <li class="{{#unless card.essentialComponents.material}}ok-mastered{{/unless}}"
+        title="{{#unless card.essentialComponents.material}}{{localize 'OKNAJAN.cards.mastered'}}{{/unless}}">M</li>
+  </ul>
+
+  {{#if (gte card.tier 2)}}
+  <section class="ok-empowerment">
+    <h5>{{localize "OKNAJAN.cards.empowermentHeading"}}</h5>
+    <p>{{card.empowermentPerSlot}}</p>
+    <p class="ok-hint">{{localize "OKNAJAN.cards.empowermentCap"}}: {{card.empowermentCap}}</p>
+  </section>
+  {{/if}}
+
+  {{#if (gte card.tier 3)}}
+  {{#unless card.isModifiedVariant}}
+  <footer class="ok-card-footer">
+    <button type="button" class="ok-card-modify" data-item-id="{{card.id}}">
+      {{localize "OKNAJAN.cards.modifySpell"}}
+    </button>
+  </footer>
+  {{/unless}}
+  {{/if}}
+</article>

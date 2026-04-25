@@ -1,0 +1,110 @@
+<section class="tab ok-sheet-tab" data-tab="oknajan" data-group="primary">
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.treatAsCard"}}</legend>
+    <label class="ok-checkbox">
+      <input type="checkbox" name="flags.oknajan-cards.isCard" {{#if flags.isCard}}checked{{/if}}/>
+      <span>{{localize "OKNAJAN.sheet.treatAsCardLabel"}}</span>
+    </label>
+  </fieldset>
+
+  {{#if flags.isCard}}
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.technique.progression"}}</legend>
+    <div class="ok-grid ok-grid-3">
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier1Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.techniqueConfig.tier1Threshold"
+               value="{{flags.techniqueConfig.tier1Threshold}}"/>
+      </label>
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier2Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.techniqueConfig.tier2Threshold"
+               value="{{flags.techniqueConfig.tier2Threshold}}"/>
+      </label>
+      <label>
+        <span>{{localize "OKNAJAN.sheet.tier3Threshold"}}</span>
+        <input type="number" min="1" step="1"
+               name="flags.oknajan-cards.techniqueConfig.tier3Threshold"
+               value="{{flags.techniqueConfig.tier3Threshold}}"/>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.technique.benefits"}}</legend>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.tier1Benefit"}}</span>
+      <textarea rows="2"
+                name="flags.oknajan-cards.techniqueConfig.tier1Benefit">{{flags.techniqueConfig.tier1Benefit}}</textarea>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.tier2Benefit"}}</span>
+      <textarea rows="2"
+                name="flags.oknajan-cards.techniqueConfig.tier2Benefit">{{flags.techniqueConfig.tier2Benefit}}</textarea>
+    </label>
+  </fieldset>
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.technique.ultimate"}}</legend>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.ultimateName"}}</span>
+      <input type="text"
+             name="flags.oknajan-cards.techniqueConfig.ultimateName"
+             value="{{flags.techniqueConfig.ultimateName}}"/>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.ultimateDescription"}}</span>
+      <textarea rows="3"
+                name="flags.oknajan-cards.techniqueConfig.ultimateDescription">{{flags.techniqueConfig.ultimateDescription}}</textarea>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.ultimateImg"}}</span>
+      <input type="text"
+             name="flags.oknajan-cards.techniqueConfig.ultimateImg"
+             value="{{flags.techniqueConfig.ultimateImg}}"
+             placeholder="modules/oknajan-cards/ui/…"/>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.ultimateStaminaCost"}}</span>
+      <input type="number" min="0" step="1"
+             name="flags.oknajan-cards.techniqueConfig.ultimateStaminaCost"
+             value="{{flags.techniqueConfig.ultimateStaminaCost}}"/>
+    </label>
+  </fieldset>
+
+  <fieldset class="ok-sheet-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.technique.meta"}}</legend>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.category"}}</span>
+      <input type="text"
+             name="flags.oknajan-cards.techniqueConfig.category"
+             value="{{flags.techniqueConfig.category}}"/>
+    </label>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.resourceLabel"}}</span>
+      <input type="text"
+             name="flags.oknajan-cards.techniqueConfig.resourceLabel"
+             value="{{flags.techniqueConfig.resourceLabel}}"/>
+    </label>
+  </fieldset>
+
+  {{#unless isPassive}}
+  <fieldset class="ok-sheet-fieldset ok-stamina-fieldset">
+    <legend>{{localize "OKNAJAN.sheet.technique.staminaCost"}}</legend>
+    <label>
+      <span>{{localize "OKNAJAN.sheet.technique.staminaCostLabel"}}</span>
+      <input type="number" min="0" step="1"
+             name="flags.oknajan-cards.staminaCost"
+             value="{{flags.staminaCost}}"/>
+    </label>
+    <p class="ok-hint">{{localize "OKNAJAN.sheet.technique.staminaCostHint"}}</p>
+  </fieldset>
+  {{else}}
+  <p class="ok-hint">{{localize "OKNAJAN.sheet.technique.passiveHint"}}</p>
+  {{/unless}}
+  {{/if}}
+
+</section>

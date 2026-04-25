@@ -1,0 +1,148 @@
+/* Hide until the AppV2 tab controller adds .active. */
+.ok-sheet-tab { display: none; }
+.ok-sheet-tab.active {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ok-sheet-fieldset {
+  border: 1px solid var(--ok-card-border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem 0.75rem;
+  background: var(--ok-card-bg);
+}
+
+.ok-sheet-fieldset legend {
+  padding: 0 0.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.ok-sheet-fieldset label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+}
+
+.ok-sheet-fieldset label > span {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.ok-sheet-fieldset input[type="number"],
+.ok-sheet-fieldset input[type="text"],
+.ok-sheet-fieldset textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ok-sheet-fieldset textarea {
+  resize: vertical;
+  min-height: 2.4em;
+  font-family: inherit;
+}
+
+.ok-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ok-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ok-grid label {
+  margin: 0;
+}
+
+.ok-checkbox {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ok-checkbox input {
+  flex-shrink: 0;
+}
+
+.ok-hint {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  margin: 0.3rem 0 0 0;
+  line-height: 1.35;
+}
+
+.ok-stamina-fieldset {
+  border-color: rgba(107, 192, 122, 0.5);
+}
+
+.ok-dialog-modify-spell label,
+.ok-confirm-stamina label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.ok-dialog-modify-spell textarea,
+.ok-dialog-modify-spell input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ok-confirm-stamina h3 {
+  margin: 0 0 0.3rem 0;
+}
+
+.ok-confirm-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0.35rem 0 0 0;
+}
+
+.ok-confirm-details dt {
+  opacity: 0.7;
+}
+
+.ok-confirm-details dd {
+  margin: 0;
+}
+
+.ok-empowerment-fieldset {
+  border: 1px solid var(--ok-card-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  margin-top: 0.5rem;
+  background: var(--ok-card-bg);
+}
+
+.ok-empowerment-fieldset legend {
+  padding: 0 0.3rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ok-empowerment-fieldset label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0.25rem 0;
+}
+
+.ok-empowerment-fieldset input[type="number"] {
+  width: 5em;
+}
+
+.ok-tab-trigger {
+  position: relative;
+}

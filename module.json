@@ -1,0 +1,53 @@
+{
+  "id": "oknajan-cards",
+  "title": "Oknajan Cards",
+  "description": "Card-based spell and technique progression for D&D 5e on Foundry VTT, with a character-level stamina system.",
+  "version": "1.0.0",
+  "authors": [{ "name": "Oknajan Project" }],
+  "compatibility": {
+    "minimum": "13.347",
+    "verified": "14",
+    "maximum": ""
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": { "minimum": "5.0.0" }
+      }
+    ]
+  },
+  "esmodules": ["scripts/module.mjs"],
+  "styles": [
+    "styles/module.css",
+    "styles/sheets.css",
+    "styles/cards.css",
+    "styles/stars.css",
+    "styles/foil.css",
+    "styles/stamina.css"
+  ],
+  "languages": [
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "packs": [
+    {
+      "name": "oknajan-sample-spells",
+      "label": "Oknajan Sample Spells",
+      "path": "packs/oknajan-sample-spells",
+      "type": "Item",
+      "system": "dnd5e"
+    },
+    {
+      "name": "oknajan-sample-techniques",
+      "label": "Oknajan Sample Techniques",
+      "path": "packs/oknajan-sample-techniques",
+      "type": "Item",
+      "system": "dnd5e"
+    }
+  ],
+  "socket": false,
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

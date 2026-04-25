@@ -1,0 +1,117 @@
+{
+  "OKNAJAN": {
+    "moduleTitle": "Oknajan Cards",
+    "settings": {
+      "recoveryPolicy": {
+        "name": "Stamina Recovery Policy",
+        "hint": "When characters recover stamina during rests.",
+        "choices": {
+          "short": "Short rest only",
+          "long": "Long rest only",
+          "both": "Both short and long rest",
+          "neither": "Neither"
+        }
+      },
+      "staminaMaxFormula": {
+        "name": "Default Stamina Max Formula",
+        "hint": "Used when initialising a character's stamina pool. Formula uses the character's roll data (e.g. '3 + @abilities.con.mod')."
+      },
+      "confirmStamina": {
+        "name": "Confirm Stamina Spend",
+        "hint": "Show a confirmation dialog before spending stamina on a technique."
+      },
+      "showCardsTab": {
+        "name": "Show Cards Tab",
+        "hint": "Show the Cards tab on character sheets. Disabling hides the tab without removing any data."
+      }
+    },
+    "sheet": {
+      "treatAsCard": "Oknajan Card",
+      "treatAsCardLabel": "Treat this item as an Oknajan card.",
+      "tier1Threshold": "Tier 1 threshold",
+      "tier2Threshold": "Tier 2 threshold",
+      "tier3Threshold": "Tier 3 threshold",
+      "spell": {
+        "progression": "Progression Thresholds",
+        "essentialComponents": "Essential Components",
+        "vocal": "Vocal",
+        "somatic": "Somatic",
+        "material": "Material",
+        "componentsHint": "Tick components that remain essential at tier 1. Unticked components are treated as mastered and displayed struck-through on the card.",
+        "empowerment": "Empowerment",
+        "empowermentCap": "Empowerment cap",
+        "empowermentPerSlot": "Per-slot description",
+        "empowermentHint": "Describes what one empowerment does. The first empowerment is free at tier 2; each additional empowerment costs one extra spell slot of the cast level."
+      },
+      "technique": {
+        "progression": "Progression Thresholds",
+        "benefits": "Tier Benefits",
+        "tier1Benefit": "Tier 1 benefit",
+        "tier2Benefit": "Tier 2 benefit",
+        "ultimate": "Ultimate Variant",
+        "ultimateName": "Ultimate name",
+        "ultimateDescription": "Ultimate description",
+        "ultimateImg": "Ultimate image path",
+        "ultimateStaminaCost": "Ultimate stamina cost",
+        "meta": "Metadata",
+        "category": "Category",
+        "resourceLabel": "Resource label",
+        "staminaCost": "Stamina Cost",
+        "staminaCostLabel": "Cost per use",
+        "staminaCostHint": "Drives the activity's stamina consumption target. Edits sync automatically when you change activation to/from Passive.",
+        "passiveHint": "This technique has no activation, so it spends no stamina."
+      }
+    },
+    "cards": {
+      "spellsHeading": "Spells",
+      "techniquesHeading": "Techniques",
+      "noSpells": "No spell cards yet.",
+      "noTechniques": "No technique cards yet.",
+      "stamina": "Stamina",
+      "initialiseStamina": "Initialise stamina pool",
+      "mastered": "Mastered",
+      "empowermentHeading": "Empowerment",
+      "empowermentCap": "Cap",
+      "passive": "Passive",
+      "use": "Use",
+      "modifySpell": "Modify spell",
+      "insufficientStamina": "Insufficient stamina.",
+      "tabLabel": "Cards"
+    },
+    "ariaLabels": {
+      "oknajanTab": "Oknajan",
+      "cardsTab": "Cards"
+    },
+    "variants": {
+      "ultimateSuffix": "(Ultimate)",
+      "modifiedSuffix": "(Modified)"
+    },
+    "warn": {
+      "noActivityForTechnique": "This technique has no activity, so its stamina cost cannot be wired into the activity's consumption targets. Add an activity on the Activities tab."
+    },
+    "dialogs": {
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "initStamina": {
+        "title": "Initialise stamina pool",
+        "overwrite": "This character already has a stamina pool configured on the tertiary resource. Re-initialising will overwrite its label, max, current value, and rest flags. Continue?"
+      },
+      "modifySpell": {
+        "title": "Modify spell",
+        "name": "Name",
+        "description": "Description"
+      },
+      "confirmStamina": {
+        "title": "Spend stamina?",
+        "prompt": "Spending stamina on this technique:",
+        "cost": "Cost",
+        "current": "Current stamina"
+      }
+    },
+    "empowerment": {
+      "title": "Empowerment",
+      "howMany": "Number of empowerments",
+      "hint": "The first empowerment is free; each additional empowerment consumes one extra spell slot of the cast level."
+    }
+  }
+}
