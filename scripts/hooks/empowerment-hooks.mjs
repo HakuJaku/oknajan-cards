@@ -27,7 +27,7 @@ async function onRenderUsageDialog(app, element, context, options) {
     const root = element instanceof HTMLElement ? element : element?.[0];
     if (!root || root.querySelector(".ok-empowerment-fieldset")) return;
 
-    const html = await renderTemplate(DIALOG_TEMPLATE, { cap });
+    const html = await foundry.applications.handlebars.renderTemplate(DIALOG_TEMPLATE, { cap });
     const form = root.querySelector("form") ?? root;
     const wrapper = document.createElement("div");
     wrapper.innerHTML = html.trim();

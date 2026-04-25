@@ -85,7 +85,7 @@ export async function openModifySpellDialog(actor, parentItem) {
     name: `${parentItem.name} ${game.i18n.localize("OKNAJAN.variants.modifiedSuffix")}`,
     description: parentItem.system?.description?.value ?? ""
   };
-  const content = await renderTemplate(MODIFY_DIALOG_TEMPLATE, initial);
+  const content = await foundry.applications.handlebars.renderTemplate(MODIFY_DIALOG_TEMPLATE, initial);
 
   return new Promise(resolve => {
     new Dialog({

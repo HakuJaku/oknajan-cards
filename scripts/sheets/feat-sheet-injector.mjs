@@ -13,7 +13,7 @@ export async function injectFeatSheet(app, element, context, options) {
   const activationType = item.system?.activation?.type;
   const isPassive = !activationType || activationType === "none" || activationType === "";
 
-  const rendered = await renderTemplate(TEMPLATE, { flags, isPassive });
+  const rendered = await foundry.applications.handlebars.renderTemplate(TEMPLATE, { flags, isPassive });
   insertOknajanTab(app, element, rendered);
 
   // Toggle-on default writer

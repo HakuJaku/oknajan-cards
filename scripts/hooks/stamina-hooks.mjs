@@ -16,7 +16,7 @@ export function registerStaminaHooks() {
       if (!game.settings.get(MODULE_ID, SETTINGS.confirmStamina)) return true;
 
       const stamina = readStamina(item.actor);
-      const content = await renderTemplate(CONFIRM_TEMPLATE, {
+      const content = await foundry.applications.handlebars.renderTemplate(CONFIRM_TEMPLATE, {
         itemName: item.name,
         cost,
         stamina

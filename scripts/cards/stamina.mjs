@@ -34,7 +34,7 @@ export async function initialiseStaminaPool(actor) {
   const formula = game.settings.get(MODULE_ID, SETTINGS.staminaMaxFormula);
   const rollData = actor.getRollData();
   const roll = new Roll(formula, rollData);
-  await roll.evaluate({ async: true });
+  roll.evaluateSync();
   const max = Math.max(0, Math.round(roll.total));
 
   const policy = game.settings.get(MODULE_ID, SETTINGS.recoveryPolicy);

@@ -19,7 +19,7 @@ export async function injectCardsTab(app, element, context, options) {
   try {
     await ensureCardsTemplatesRegistered();
     const ctx = buildTabContext(actor);
-    const rendered = await renderTemplate(TAB_TEMPLATE, ctx);
+    const rendered = await foundry.applications.handlebars.renderTemplate(TAB_TEMPLATE, ctx);
 
     // Locate the primary nav by finding any existing primary-group anchor and
     // climbing to its parent nav. The nav itself has no data-group attribute.

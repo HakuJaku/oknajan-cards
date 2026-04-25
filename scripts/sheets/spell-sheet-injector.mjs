@@ -9,7 +9,7 @@ export async function injectSpellSheet(app, element, context, options) {
   if (item?.type !== "spell") return;
 
   const flags = readFlagsForRender(item);
-  const rendered = await renderTemplate(TEMPLATE, { flags });
+  const rendered = await foundry.applications.handlebars.renderTemplate(TEMPLATE, { flags });
   insertOknajanTab(app, element, rendered);
 
   // Toggle-on default writer
